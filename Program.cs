@@ -33,6 +33,35 @@ namespace class_test_1
             {
                 animal.MakeSound();
             }
+
+            Dictionary<enAnimalType, Animal> dickAnimals = new Dictionary<enAnimalType, Animal>();
+            
+            dickAnimals.Add(enAnimalType.fox, new Animal("red", "Reaww"));
+            dickAnimals.Add(enAnimalType.cow, new Animal("blue", "moow"));
+            dickAnimals.Add(enAnimalType.dog, new Animal("green", "bawwow"));
+
+            foreach (KeyValuePair<enAnimalType, Animal> item in dickAnimals)
+            {
+                Animal key = item.Key;
+                Animal value = item.Value;
+
+                value.MakeSound();
+            }
+
+            foreach(Animal item in dickAnimals.Values)
+            {
+                item.MakeSound();
+            }
+
+            Animal outAnimal;
+            if (dickAnimals.TryGetValue(enAnimalType.fox, out outAnimal))
+            {
+                outAnimal.MakeSound();
+            }
+            else
+            {
+                Console.WriteLine("[E] fox not found");
+            }
             Console.WriteLine("number : {0}", Animal.GetNumOfAnimals());
 
 
