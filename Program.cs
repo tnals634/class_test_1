@@ -35,9 +35,13 @@ namespace class_test_1
 
             Console.WriteLine("Class Angle");
             Console.WriteLine("==========================");
+
             Console.WriteLine("Area of Rectangle : {0}", ShapeMath.GetArea("rectangle", 5, 6));
+
             Console.WriteLine("Area of Triangle : {0}", ShapeMath.GetArea("Triangle", 5, 6));
+
             Console.WriteLine("Area of Circle : {0}", ShapeMath.GetArea("Circle", 5, 6));
+
             Console.ReadLine();
         }
 
