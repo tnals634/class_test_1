@@ -19,20 +19,24 @@ namespace class_test_1
             Rectangle rect2 = new Rectangle(200, 50);
             Console.WriteLine("rectangle length:{0}, whith:{1}, area:{2}", rect2.length, rect2.width, rect2.Area());
             */
-            /*
+
+            Console.WriteLine(String.Empty);
             Console.WriteLine("Class Animals");
             Console.WriteLine("=================");
 
-            Animal fox = new Animal("fox","Reaww");
-            fox.MakeSound();
-            Animal cow = new Animal("cow", "moo");
-            cow.MakeSound();
-            Animal dog = new Animal("dog", "bowwow");
-            dog.MakeSound();
+            List<Animal> animals = new List<Animal>();
+            animals.Add(new Animal("fox", "Reaww"));
+            animals.Add(new Animal("cow", "moo"));
+            animals.Add(new Animal("dog", "bowwow"));
+
+            foreach(Animal animal in animals)
+            {
+                animal.MakeSound();
+            }
             Console.WriteLine("number : {0}", Animal.GetNumOfAnimals());
-            */
 
 
+            Console.WriteLine(String.Empty);
             Console.WriteLine("Class Angle");
             Console.WriteLine("==========================");
 
