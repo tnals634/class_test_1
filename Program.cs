@@ -26,6 +26,7 @@ namespace class_test_1
             cow.MakeSound();
             Animal dog = new Animal("dog", "bowwow");
             dog.MakeSound();
+            Console.WriteLine("number = {0}", Animal.GetNumOfAnimals());
             Console.ReadLine();
         }
 
