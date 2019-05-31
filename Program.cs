@@ -19,6 +19,9 @@ namespace class_test_1
             Rectangle rect2 = new Rectangle(200, 50);
             Console.WriteLine("rectangle length:{0}, whith:{1}, area:{2}", rect2.length, rect2.width, rect2.Area());
             */
+            /*
+            Console.WriteLine("Class Animals");
+            Console.WriteLine("=================");
 
             Animal fox = new Animal("fox","Reaww");
             fox.MakeSound();
@@ -26,7 +29,15 @@ namespace class_test_1
             cow.MakeSound();
             Animal dog = new Animal("dog", "bowwow");
             dog.MakeSound();
-            Console.WriteLine("number = {0}", Animal.GetNumOfAnimals());
+            Console.WriteLine("number : {0}", Animal.GetNumOfAnimals());
+            */
+
+
+            Console.WriteLine("Class Angle");
+            Console.WriteLine("==========================");
+            Console.WriteLine("Area of Rectangle : {0}", ShapeMath.GetArea("rectangle", 5, 6));
+            Console.WriteLine("Area of Triangle : {0}", ShapeMath.GetArea("Triangle", 5, 6));
+            Console.WriteLine("Area of Circle : {0}", ShapeMath.GetArea("Circle", 5, 6));
             Console.ReadLine();
         }
 
