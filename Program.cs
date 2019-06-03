@@ -29,7 +29,7 @@ namespace class_test_1
             animals.Add(new Animal("cow", "moo"));
             animals.Add(new Animal("cat", "nyang"));
 
-            //강사
+            //강사 풀이
             for (int i =0; i<animals.Count;i++)
             {
                 Animal thisAnimal = animals[i];
