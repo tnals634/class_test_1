@@ -20,8 +20,8 @@ namespace class_test_1
     {
         static int numOfAnimals = 0;
 
-        public string name;
-        public string sound;
+        private string name;
+        private string sound;
         
         public Animal()
         {
@@ -43,6 +43,11 @@ namespace class_test_1
         public static int GetNumOfAnimals()
         {
             return numOfAnimals++;
+        }
+
+        public String GetName()
+        {
+            return name;
         }
     }
 }

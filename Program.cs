@@ -27,34 +27,92 @@ namespace class_test_1
             List<Animal> animals = new List<Animal>();
             animals.Add(new Animal("fox", "Reaww"));
             animals.Add(new Animal("cow", "moo"));
-            animals.Add(new Animal("dog", "bowwow"));
+            animals.Add(new Animal("cat", "nyang"));
 
-            foreach(Animal animal in animals)
+            //강사
+            for (int i =0; i<animals.Count;i++)
             {
-                animal.MakeSound();
+                Animal thisAnimal = animals[i];
             }
 
-            Dictionary<enAnimalType, Animal> dickAnimals = new Dictionary<enAnimalType, Animal>();
-            
-            dickAnimals.Add(enAnimalType.fox, new Animal("red", "Reaww"));
-            dickAnimals.Add(enAnimalType.cow, new Animal("blue", "moow"));
-            dickAnimals.Add(enAnimalType.dog, new Animal("green", "bawwow"));
-
-            foreach (KeyValuePair<enAnimalType, Animal> item in dickAnimals)
+            bool bFound = false;
+            foreach(var animal in animals)
             {
-                Animal key = item.Key;
-                Animal value = item.Value;
+                var animalName = animal.GetName();
+                if(animalName == "pig")
+                {
+                    bFound = true;
+                    break;
+                }
+            }
+
+            if(bFound)
+            {
+                Console.WriteLine("pig found");
+            }
+            else
+            {
+                Console.WriteLine("pig not found");
+            }
+            ///////////////////////////////////////////
+
+            foreach(var animal in animals)
+            {
+                //animal.MakcSound();
+                var animalName = animal.GetName();
+                if(animalName == "cat")
+                {
+                    Console.WriteLine("Found cat");
+                    Console.WriteLine(">>");
+                    animal.MakeSound();
+                }
+            }
+
+            Animal myCat = animals.Find(item => item.GetName().Equals("cat"));
+            Animal mpig = null;
+            mpig = animals.Find(item => item.GetName().Equals("pig"));
+
+            if(myCat != null)
+            {
+                Console.WriteLine("Foundt cat");
+                Console.WriteLine(">>");
+                myCat.MakeSound();
+            }
+
+            if(mpig != null)
+            {
+                Console.WriteLine("Found pig");
+                Console.Write(">>");
+                mpig.MakeSound();
+            }
+            else
+            {
+                Console.WriteLine("..not found pig");
+            }
+
+            Dictionary<enAnimalType, Animal> dicAnimals = new Dictionary<enAnimalType, Animal>();
+            
+            dicAnimals.Add(enAnimalType.fox, new Animal("red", "Reaww"));
+            dicAnimals.Add(enAnimalType.cow, new Animal("blue", "moow"));
+            dicAnimals.Add(enAnimalType.dog, new Animal("green", "nyang"));
+
+            var someanimal = dicAnimals[enAnimalType.cat];
+
+            foreach (KeyValuePair<enAnimalType, Animal> item in dicAnimals)
+            {
+                var key = item.Key;
+                var value = item.Value;
 
                 value.MakeSound();
             }
 
-            foreach(Animal item in dickAnimals.Values)
+            foreach(var item in dicAnimals.Values)
             {
                 item.MakeSound();
             }
 
             Animal outAnimal;
-            if (dickAnimals.TryGetValue(enAnimalType.fox, out outAnimal))
+            if (dicAnimals.TryGetValue(enAnimalType.fox, out outAnimal))//이 값이 있나 없나 찾아보고 있으면 내보내고 없으면 else로 빠진다
             {
                 outAnimal.MakeSound();
             }
@@ -62,6 +120,7 @@ namespace class_test_1
             {
                 Console.WriteLine("[E] fox not found");
             }
+
             Console.WriteLine("number : {0}", Animal.GetNumOfAnimals());
 
 
