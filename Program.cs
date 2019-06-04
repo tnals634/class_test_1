@@ -12,7 +12,8 @@ namespace class_test_1
         {
             //PracticeClass.practice1();
             //PracticeClass.practice2();
-            PracticeClass.practice3();
+            //PracticeClass.practice3();
+            PracticeClass.practice4();
             Console.ReadLine();
         }
     }

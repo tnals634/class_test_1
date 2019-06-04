@@ -261,23 +261,46 @@ namespace class_test_1
             //Console.WriteLine(Math.Floor(0.5m)); // 소숫점 내림 정수값으로 반환
             //Console.WriteLine(Math.Sqrt(4)); // 지정 숫자의 루트값으로 반환
 
-            Tuple<String, double>[] areas =
-            {
-                Tuple.Create("Sitka, Alaska", 2870.3),
-                Tuple.Create("New York City", 302.6),
-                Tuple.Create("Los Angeles", 468.7),
-                Tuple.Create("Detroit", 138.8),
-                Tuple.Create("Chicago", 227.1),
-                Tuple.Create("San Diego", 325.2)
-            };
-            Console.WriteLine("{0, -18} {1,14:N1} {2,30}\n", "City", "Area (mi.)", "Equivalent to a square with:");
-            foreach (var area in areas)
-            {
-                Console.WriteLine("{0,-18} {1,14:N1} {2,14:N2} miles per side", area.Item1, area.Item2, Math.Round(Math.Sqrt(area.Item2), 2));
-            }
+            //Tuple<String, double>[] areas =
+            //{
+            //    Tuple.Create("Sitka, Alaska", 2870.3),
+            //    Tuple.Create("New York City", 302.6),
+            //    Tuple.Create("Los Angeles", 468.7),
+            //    Tuple.Create("Detroit", 138.8),
+            //    Tuple.Create("Chicago", 227.1),
+            //    Tuple.Create("San Diego", 325.2)
+            //};
+            //Console.WriteLine("{0, -18} {1,14:N1} {2,30}\n", "City", "Area (mi.)", "Equivalent to a square with:");
+            //foreach (var area in areas)
+            //{
+            //    Console.WriteLine("{0,-18} {1,14:N1} {2,14:N2} miles per side", area.Item1, area.Item2, Math.Round(Math.Sqrt(area.Item2), 2));
+            //}
 
             //Console.WriteLine(Math.Max(2,5));
             //Console.WriteLine(Math.Atan2(2.0,2.0));
+        }
+
+        public static void practice4()
+        {
+            //String name = null;
+            //Console.Write("Enter Your Name : ");
+            //name = Console.ReadLine();
+            //Console.WriteLine("Hello, {0}",name);
+
+            String id1 = "sumin", pw = "1234", password = null, id2 = null;
+            Console.Write("Your id : ");
+            id2 = Console.ReadLine();
+            Console.WriteLine(" password : ");
+            password = Console.ReadLine();
+            if ((id1 != id2) || (pw != password)) 
+            {
+                if(id1 != id2) Console.WriteLine("아이디가 틀립니다.");
+                if (pw != password) Console.WriteLine("비밀번호가 틀립니다.");
+            }
+            else
+            {
+                Console.WriteLine("인증되었습니다.");
+            }
         }
     }
 }
