@@ -244,5 +244,40 @@ namespace class_test_1
             }*/
             ///////////////////////
         }
+
+        public static void practice3()
+        {
+            //Console.WriteLine(5 + 8);
+            //Console.WriteLine(5 - 8);
+            //Console.WriteLine(5 * 8);
+            //Console.WriteLine(5 / 2);
+            //Console.WriteLine(5 / 2.0);
+            //Console.WriteLine(5 % 2);
+            //Console.WriteLine(4 + 5 * 2);
+            //Console.WriteLine(5.1 - 8.3);
+            //Console.WriteLine(Math.Abs(-5)); // 절댓값
+            //Console.WriteLine(Math.Pow(2, 3)); // 앞수를 뒷수만큼 거듭제곱
+            //Console.WriteLine(Math.Ceiling(-10.2)); // 소숫점 올림 정수값으로 반환해줌
+            //Console.WriteLine(Math.Floor(0.5m)); // 소숫점 내림 정수값으로 반환
+            //Console.WriteLine(Math.Sqrt(4)); // 지정 숫자의 루트값으로 반환
+
+            Tuple<String, double>[] areas =
+            {
+                Tuple.Create("Sitka, Alaska", 2870.3),
+                Tuple.Create("New York City", 302.6),
+                Tuple.Create("Los Angeles", 468.7),
+                Tuple.Create("Detroit", 138.8),
+                Tuple.Create("Chicago", 227.1),
+                Tuple.Create("San Diego", 325.2)
+            };
+            Console.WriteLine("{0, -18} {1,14:N1} {2,30}\n", "City", "Area (mi.)", "Equivalent to a square with:");
+            foreach (var area in areas)
+            {
+                Console.WriteLine("{0,-18} {1,14:N1} {2,14:N2} miles per side", area.Item1, area.Item2, Math.Round(Math.Sqrt(area.Item2), 2));
+            }
+
+            //Console.WriteLine(Math.Max(2,5));
+            //Console.WriteLine(Math.Atan2(2.0,2.0));
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace class_test_1
         static void Main(string[] args)
         {
             //PracticeClass.practice1();
-            PracticeClass.practice2();
+            //PracticeClass.practice2();
+            PracticeClass.practice3();
             Console.ReadLine();
         }
     }
