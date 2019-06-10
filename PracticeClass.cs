@@ -515,10 +515,384 @@ namespace class_test_1
             Console.Write("Draw : ");
             tri2.Draw(tri2.A, tri2.B, tri2.C);
         }
+        public static void practice12() //삼각형 크래스
+        {
+            List<Triangle1> triangles = new List<Triangle1>();
+            triangles.Add(new Triangle1(3, 4, 5));
+            triangles.Add(new Triangle1(3, 3, 3));
+            triangles.Add(new Triangle1(5, 4, 3));
+
+            int index = 1;
+            foreach(Triangle1 shape in triangles)
+            {
+                shape.Draw(index);
+                index++;
+            }
+        }
+
+        class Triangle1 // practice12
+        {
+            private int A, B, C;
+            public Triangle1(int a, int b, int c)
+            {
+                A = a;
+                B = b;
+                C = c;
+            }
+
+            public int getA
+            {
+                get { return this.A; }
+            }
+
+            public int getB
+            {
+                get { return this.B; }
+            }
+            public int getC
+            {
+                get { return this.C; }
+            }
+            public int Triangle_add(int a, int b, int c)
+            {
+                return a + b + c;
+            }
+
+            public void Draw(int a)
+            {
+                Console.WriteLine("Draw({0},{1},{2})", getA, getB, getC);
+                Console.WriteLine("둘레 길이 : {0}\n", Triangle_add(getA, getB, getC));
+            }
+        }
+        public static void practice13_1()
+        {
+            //2개의 숫자 (int, double 형 각각)을 받아들여 덧셈, 뺄셈 곱셈, 나눗셈을
+            //수행하는 메서드를 갖는 클래스를 작성하시오.
+            /*Computation_int com = new Computation_int(20, 10);
+            Console.WriteLine("a = {0}, b = {1}", com.A, com.B);
+            Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3}\n", com.Add(com.A, com.B), com.Sub(com.A, com.B), com.Mul(com.A, com.B), com.Div(com.A, com.B));
+            Computation_double com1 = new Computation_double(20.5, 10.5);
+            Console.WriteLine("x = {0}, y = {1}", com1.A, com1.B);
+            Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3:N6}\n", com1.Add(com1.A, com1.B), com1.Sub(com1.A, com1.B), com1.Mul(com1.A, com1.B), com1.Div(com1.A, com1.B));
+            */
+            List<Computation_int> com1 = new List<Computation_int>();
+            com1.Add(new Computation_int(0, 10));
+            List<Computation_double> com2 = new List<Computation_double>();
+            com2.Add(new Computation_double(20.5, 10.5));
+
+            int index1 = 1, index2 = 1;
+            foreach (Computation_int shape in com1)
+            {
+                shape.Draw(index1);
+                index1++;
+            }
+            foreach (Computation_double shape in com2)
+            {
+                shape.Draw(index2);
+                index2++;
+            }
+
+
+        }
+        class Computation_double // 사칙연산(double 형)
+        {
+            private double number1 = 0;
+            private double number2 = 0;
+
+            public Computation_double(double a, double b)
+            {
+                number1 = a;
+                number2 = b;
+            }
+            public double A
+            {
+                get { return this.number1; }
+            }
+            public double B
+            {
+                get { return this.number2; }
+            }
+
+            public double Add(double a, double b) //덧셈
+            {
+                return a + b;
+            }
+            public double Sub(double a, double b) //뺄셈
+            {
+                return a - b;
+            }
+            public double Mul(double a, double b) //곱셈
+            {
+                return a * b;
+            }
+            public double Div(double a, double b) //나눗셈
+            {
+                double c = 0;
+                if ((a != 0) || (b != 0))
+                {
+                    if (a > b)
+                    {
+                        c = a / b;
+                    }
+                    else
+                    {
+                        c = b / a;
+                    }
+                }
+                return c;
+            }
+            public void Draw(double c)
+            {
+                Console.WriteLine("a = {0}, b = {1}", A, B);
+                Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3:N6}", Add(A, B), Sub(A, B), Mul(A, B), Div(A, B));
+            }
+        }
+        class Computation_int //사칙연산(int 형)
+        {
+            private int number1 = 0;
+            private int number2 = 0;
+
+            public Computation_int(int a, int b)
+            {
+                number1 = a;
+                number2 = b;
+            }
+            public int A
+            {
+                get { return this.number1; }
+            }
+            public int B
+            {
+                get { return this.number2; }
+            }
+
+            public int Add(int a, int b) //덧셈
+            {
+                return a + b;
+            }
+            public int Sub(int a, int b) //뺄셈
+            {
+                return a - b;
+            }
+            public int Mul(int a, int b) //곱셈
+            {
+                return a * b;
+            }
+            public int Div(int a, int b) //나눗셈
+            {
+                int c = 0;
+                if ((a != 0) || (b != 0))
+                {
+                    if (a > b)
+                    {
+                        c = a / b;
+                    }
+                    else
+                    {
+                        c = b / a;
+                    }
+                }
+                return c;
+            }
+            public void Draw(int c)
+            {
+                Console.WriteLine("a = {0}, b = {1}", A, B);
+                Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3}", Add(A, B), Sub(A, B), Mul(A, B), Div(A, B));
+            }
+        }
+        public static void practice13_2()
+        {
+            List<Computation<int>> computations_int = new List<Computation<int>>();
+            List<Computation<double>> computations_double = new List<Computation<double>>();
+            computations_int.Add(new Computation<int>(20, 10));
+            computations_double.Add(new Computation<double>(20.5, 10.5));
+            int index = 1;
+            foreach (Computation<int> shape in computations_int)
+            {
+                shape.Draw(index);
+                index++;
+            }
+            foreach (Computation<double> shape in computations_double)
+            {
+                shape.Draw(index);
+                index++;
+            }
+        }
+        class Computation<T>
+        {
+            private T number1;
+            private T number2;
+
+            public Computation(T a, T b)
+            {
+                number1 = a;
+                number2 = b;
+            }
+
+            public T A
+            {
+                get { return this.number1; }
+            }
+            public T B
+            {
+                get { return this.number2; }
+            }
+            //public static double? Add(T a, T b) //덧셈
+            //{
+            //    if (a is int)
+            //        return ((a as int?) + (b as int?));
+            //    else
+            //        return ((a as double?) + (b as double?));
+            //}
+            //public static double? Sub(T a, T b) //뺄셈
+            //{
+            //    if (a is int)
+            //        return ((a as int?) - (b as int?));
+            //    else
+            //        return ((a as double?) - (b as double?));
+            //}
+            //public static double? Mul(T a, T b) //곱셈
+            //{
+            //    if (a is int)
+            //        return ((a as int?) * (b as int?));
+            //    else
+            //        return ((a as double?) * (b as double?));
+            //}
+            //public static double? Div(T a, T b) //나눗셈
+            //{
+            //    if ((a is int))
+            //        return ((a as int?) / (b as int?));
+            //    else
+            //        return ((a as double?) / (b as double?));
+            //}
+            //public void Draw(int c)
+            //{
+            //    Console.WriteLine("a = {0}, b = {1}", A, B);
+            //    Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3}", Add(A, B), Sub(A, B), Mul(A, B), Div(A, B));
+            //}
+            
+            //강사 풀이
+            public T Add(T a, T b)
+            {
+                dynamic da = a;
+                dynamic db = b;
+
+                dynamic sum = da + db;
+                return sum;
+            }
+            public T Sub(T a, T b)
+            {
+                dynamic da = a;
+                dynamic db = b;
+
+                dynamic sub = da - db;
+                return sub;
+            }
+            public T Mul(T a, T b)
+            {
+                dynamic da = a;
+                dynamic db = b;
+
+                dynamic mul = da * db;
+                return mul;
+            }
+            public T Div(T a, T b)
+            {
+                dynamic da = a;
+                dynamic db = b;
+
+                dynamic div = 0;
+                if((da!=0) ||(db!=0))
+                {
+                    if(da>db)
+                    {
+                        div = da / db;
+                    }
+                    else
+                    {
+                        div = db / da;
+                    }
+                }
+                return div;
+            }
+            public void Draw(int c)
+            {
+                Console.WriteLine("a = {0}, b = {1}", A, B);
+                Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3}", Add(A, B), Sub(A, B), Mul(A, B), Div(A, B));
+            }
+        }
+        public static void practice14()
+        {
+            string name;
+            string c = null;
+            int check = 1;
+            Console.Write("차이름 입력: ");
+            name = Console.ReadLine();
+            Car car = new Car(name);
+            Console.WriteLine("Car Name : {0}",car.CarName);
+            Console.WriteLine("'s' = 시작시 속도, 'u' = 액셀 속도 올리기, \n'd' = 정지 후 속도, 'b' = 시동 끈 후 속도, 'a' = 프로그램 종료");
+            while (c != "a")
+            {
+                c = Console.ReadLine();
+                if (c == "s")
+                {
+                    Console.WriteLine("시작시 속도: {0}",car.Start());
+                }
+                else if (c == "u")
+                {
+                    Console.WriteLine("액셀 {0}단계 속도: {1}", check, car.Accelerate(check));
+                    check++;
+                }
+                else if (c == "d")
+                {
+                    check--;
+                    Console.WriteLine("정지후 속도: {0}", car.Break(check));                    
+                }
+                else if(c == "b")
+                {
+                    Console.WriteLine("끄고난후 속도: {0}", car.Stop());
+                }
+            }
+        }
+        class Car
+        {
+            private string name;
+            private int s;
+            public Car(string n)
+            {
+                name = n;
+            }
+            public string CarName
+            {
+                get { return this.name; }
+            }
+            public int Start()
+            {
+                s = 1;
+                return s;
+            }
+            public int Stop()
+            {
+                return 0;
+            }
+            public int Accelerate(int speed)
+            {
+                speed *= 10;
+                speed += 1;
+                return speed;
+            }
+            public int Break(int speed)
+            {
+                speed *= 10;
+                speed += 1;
+                speed -= 10;
+                return speed;
+            }
+        }
     }
 }
 
-public class Triangle
+public class Triangle //practice10
 {
     //필드
     private double number1 = 0;
