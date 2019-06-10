@@ -883,10 +883,50 @@ namespace class_test_1
             }
             public int Break(int speed)
             {
-                speed *= 10;
-                speed += 1;
-                speed -= 10;
+                if (speed != 0)
+                {
+                    speed *= 10;
+                    speed += 1;
+                    speed -= 10;
+                }
+                else
+                {
+                    speed = 0;
+                }
                 return speed;
+            }
+        }
+        public static void practice15()
+        {
+
+        }
+        public interface IDrawble
+        {
+            int Draw(object obj);
+        }
+        class Mypaint : IDrawble
+        {
+            private int key;
+            public int Draw(object obj)
+            {
+                Mypaint target = (Mypaint)obj;
+                return this.key.Draw(target.key);
+            }
+            public void DrawShape(int number)
+            {
+
+            }
+            public int Triangle(int a, int b, int c)
+            {
+                return 0;
+            }
+            public int Rectangle(int width, int height)
+            {
+                return 0;
+            }
+            public int CustomShape(int width, int height, int x, int y)
+            {
+                return 0;
             }
         }
     }
