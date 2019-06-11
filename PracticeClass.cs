@@ -923,7 +923,18 @@ namespace class_test_1
 
         public static void practice15()
         {
+            MyPaint my = new MyPaint();
 
+            Triangle_Draw t = new Triangle_Draw(3,4,5);
+            my.DrawShape(t);
+            Console.WriteLine();
+
+            Rectangle_Draw r = new Rectangle_Draw(5, 10);
+            my.DrawShape(r);
+            Console.WriteLine();
+
+            CustomShape_Draw c = new CustomShape_Draw(5, 10, 2, 2);
+            my.DrawShape(c);
         }
 
         interface IDrawble
@@ -931,9 +942,80 @@ namespace class_test_1
             void Draw();
         }
 
-        class MyPaint : IDrawble
+        class MyPaint
         {
-            
+            List<IDrawble> drawbles = new List<IDrawble>();
+
+            public MyPaint()
+            {
+
+            }
+
+            public void DrawShape(IDrawble shape)
+            {
+                drawbles.Add(shape);
+                foreach(IDrawble s in drawbles)
+                {
+                    s.Draw();
+                }
+            }
+        }
+
+        class Triangle_Draw : IDrawble
+        {
+            private int line1 = 0;
+            private int line2 = 0;
+            private int line3 = 0;
+
+            public Triangle_Draw(int a, int b, int c)
+            {
+                this.line1 = a;
+                this.line2 = b;
+                this.line3 = c;
+            }
+            public void Draw()
+            {
+                Console.WriteLine($"Draw Triangle : ({line1},{line2},{line3})");
+            }
+        }
+
+        class Rectangle_Draw : IDrawble
+        {
+            private int width = 0;
+            private int height = 0;
+
+            public Rectangle_Draw(int w, int h)
+            {
+                this.width = w;
+                this.height = h;
+            }
+
+            public void Draw()
+            {
+                Console.WriteLine($"Draw Triangle : ({width},{height})");
+            }
+        }
+
+        class CustomShape_Draw : IDrawble
+        {
+            private int width = 0;
+            private int height = 0;
+            private int x = 0;
+            private int y = 0;
+
+            public CustomShape_Draw(int w, int h, int x1, int y1)
+            {
+                this.width = w;
+                this.height = h;
+                this.x = x1;
+                this.y = y1;
+            }
+
+            public void Draw()
+            {
+
+                Console.WriteLine($"Draw Triangle : ({width},{height},{x},{y})");
+            }
         }
     }
 }
