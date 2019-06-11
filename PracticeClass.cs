@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace class_test_1
 {
-    public static class PracticeClass
+    public static partial class PracticeClass
     {
         struct Rectangle
         {
@@ -1015,6 +1015,79 @@ namespace class_test_1
             {
 
                 Console.WriteLine($"Draw Triangle : ({width},{height},{x},{y})");
+            }
+        }
+
+        public static void practice16()
+        {
+            Full_Time_Employee fte = new Full_Time_Employee("gaga", 01);
+            fte.AnnalSalary = 30000;
+            fte.AdiustSalary(-100);
+            Console.WriteLine("{0}'s annual salary is {1}",fte.Name,fte.AnnalSalary);
+            fte.SayName();
+            Console.WriteLine();
+
+            Part_Time_Employee pte = new Part_Time_Employee("nana", 02);
+            pte.TimeSalary = 9800;
+            pte.CalculatePay(5);
+            Console.WriteLine("{0}'s work hour is {1}, total pay is {2}", pte.Name, pte.TimeSalary, pte.CalculatePay(5));
+            pte.SayName();
+        }
+
+        public class Employee
+        {
+            public string Name { get; set; }
+            public string Email { get; set; }
+
+            public Employee(string name)
+            {
+                this.Name = name;
+            }
+            public virtual void SayName()
+            {
+                Console.WriteLine($"My name is {Name}");
+            }
+        }
+
+        public class Full_Time_Employee : Employee
+        {
+            private int EmployeeNumber { get; set; }
+
+            public Full_Time_Employee(string name, int number) : base(name)
+            {
+                EmployeeNumber = number;
+            }
+            public int AnnalSalary { get; set; }
+            
+            public void AdiustSalary(int anount)
+            {
+                this.AnnalSalary += anount;
+            }
+            public override void SayName()
+            {
+                //base.SayName();
+                Console.WriteLine($"My number is {EmployeeNumber}, name is {Name}");
+            }
+        }
+
+        public class Part_Time_Employee : Employee
+        {
+            private int EmployeeNumber { get; set; }
+            public int TimeSalary { get; set; }
+
+            public int CalculatePay(int time)
+            {
+                return TimeSalary * time;
+            }
+
+            public Part_Time_Employee(string name, int number) : base(name)
+            {
+                EmployeeNumber = number;
+            }
+            public override void SayName()
+            {
+                //base.SayName();
+                Console.WriteLine($"My number is {EmployeeNumber}, name is {Name}");
             }
         }
     }
