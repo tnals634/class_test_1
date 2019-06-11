@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -1088,6 +1089,76 @@ namespace class_test_1
             {
                 //base.SayName();
                 Console.WriteLine($"My number is {EmployeeNumber}, name is {Name}");
+            }
+        }
+
+        public static void practice17()
+        {
+            //Student_Score student = new Student_Score(1,85,92,88);
+            //student.All_Sum();
+            //student.All_Div();
+            //student.Printing();
+
+            try
+            {
+                // Create an instance of StreamReader to read from a file.
+                // The using statement also closes the StreamReader.
+                using (StreamReader sr = new StreamReader("number.txt"))
+                {
+                    string line;
+                    // Read and display lines from the file until the end of 
+                    // the file is reached.
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                // Let the user know what went wrong.
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public class Student
+        {
+            public int Number { get; set; }
+            public int Korea_Number { get; set; }
+            public int English_Number { get; set; }
+            public int Math_Number { get; set; }
+            public Student(int number,int knumber,int enumber,int mnumber)
+            {
+                this.Number = number;
+                this.Korea_Number = knumber;
+                this.English_Number = enumber;
+                this.Math_Number = mnumber;
+            }
+
+        }
+
+        public class Student_Score : Student
+        {
+            
+            public Student_Score (int number,int knumber,int enumber,int mnumber) : base(number,knumber,enumber,mnumber)
+            {
+                
+            }
+            public int All_Sum()
+            {
+                return Korea_Number + English_Number + Math_Number;
+                
+            }
+            
+            public int All_Div()
+            {
+                return  (Korea_Number + English_Number + Math_Number) / 3;
+            }
+            
+            public void Printing()
+            {
+                Console.WriteLine($"{Number},{Korea_Number},{English_Number},{Math_Number}///{All_Sum()},{All_Div()}");
             }
         }
     }

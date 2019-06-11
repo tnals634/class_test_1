@@ -25,7 +25,8 @@ namespace class_test_1
             //PracticeClass.practice13_2();
             //PracticeClass.practice14();
             //PracticeClass.practice15();
-            PracticeClass.practice16();
+            //PracticeClass.practice16();
+            PracticeClass.practice17();
             Console.ReadLine();
         }
     }
