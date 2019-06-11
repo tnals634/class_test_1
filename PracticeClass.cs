@@ -24,6 +24,7 @@ namespace class_test_1
                 return length * width;
             }
         }
+
         public static void practice1()
         {
             Console.WriteLine("Struct");
@@ -155,6 +156,7 @@ namespace class_test_1
 
             Console.ReadLine();
         }
+
         public static void practice2()
         {
             string str = "kunsan University" + " " + "is good";
@@ -223,6 +225,7 @@ namespace class_test_1
             Console.WriteLine(sb6.ToString());
 
         }
+
         public static void TrimEnd(StringBuilder n, char a)
         {
             String i = n.ToString();
@@ -244,6 +247,7 @@ namespace class_test_1
             }*/
             ///////////////////////
         }
+
         public static void practice3()
         {
             //Console.WriteLine(5 + 8);
@@ -278,6 +282,7 @@ namespace class_test_1
             //Console.WriteLine(Math.Max(2,5));
             //Console.WriteLine(Math.Atan2(2.0,2.0));
         }
+
         public static void practice4()
         {
             //String name = null;
@@ -300,6 +305,7 @@ namespace class_test_1
                 Console.WriteLine("인증되었습니다.");
             }
         }
+
         public static void practice5()
         {
             //한 학급에 5명의 학생이 있고, 각 학생당 국영수 세과목 점수가 배열에 저장되어 있을때,
@@ -329,6 +335,7 @@ namespace class_test_1
                 Console.WriteLine("id = {0}, 합계 = {1}, 평균 = {2:N2}", i, add[i], avg[i]);
             }
         }
+
         public static void practice6()
         {
             //한 문자열의 대문자는 소문자로, 소문자는 대문자로 변경하는 프로그램을 작성하시오.
@@ -374,6 +381,7 @@ namespace class_test_1
             //}
             //Console.WriteLine(result);
         }
+
         public static void practice7()
         {
             //"Hello World"를 시저의 암호화 기법을 사용하여 "Khoor Zruog"
@@ -430,6 +438,7 @@ namespace class_test_1
             //}
             //Console.WriteLine(sb.ToString());
         }
+
         public static void practice8()
         {
             //임의의 정의 값들을 배열로 받아들여, 그 합계를 구하는
@@ -457,6 +466,7 @@ namespace class_test_1
             Console.WriteLine("Sum(B) = {0}", Sum(number2));
 
         }
+
         public static int Sum(int[] number)
         {
             int sum = 0;
@@ -466,6 +476,7 @@ namespace class_test_1
             }
             return sum;
         }
+
         public static void practice9()
         {
             //2개의 정수 값을 받아들여 덧셈, 뺄셈, 곱셈, 나눗셈을 각각 수행하는 4개의 메서드를 작성하시오.
@@ -480,22 +491,27 @@ namespace class_test_1
             Console.WriteLine(number);
 
         }
+
         public static int Number_Add(int a, int b) //덧셈
         {
             return a + b;
         }
+
         public static int Number_Sub(int a, int b) //뺄셈
         {
             return a - b;
         }
+
         public static int Number_Mul(int a, int b) //곱셈
         {
             return a * b;
         }
+
         public static int Number_Div(int a, int b) //나눗셈
         {
             return a / b;
         }
+
         public static void practice10()
         {
             //다음과 같은 조건을 갖는 삼각형(Triangle) 클래스를 작성하세요.
@@ -515,6 +531,7 @@ namespace class_test_1
             Console.Write("Draw : ");
             tri2.Draw(tri2.A, tri2.B, tri2.C);
         }
+
         public static void practice12() //삼각형 크래스
         {
             List<Triangle1> triangles = new List<Triangle1>();
@@ -564,6 +581,7 @@ namespace class_test_1
                 Console.WriteLine("둘레 길이 : {0}\n", Triangle_add(getA, getB, getC));
             }
         }
+
         public static void practice13_1()
         {
             //2개의 숫자 (int, double 형 각각)을 받아들여 덧셈, 뺄셈 곱셈, 나눗셈을
@@ -594,6 +612,7 @@ namespace class_test_1
 
 
         }
+
         class Computation_double // 사칙연산(double 형)
         {
             private double number1 = 0;
@@ -647,6 +666,7 @@ namespace class_test_1
                 Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3:N6}", Add(A, B), Sub(A, B), Mul(A, B), Div(A, B));
             }
         }
+
         class Computation_int //사칙연산(int 형)
         {
             private int number1 = 0;
@@ -700,6 +720,7 @@ namespace class_test_1
                 Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3}", Add(A, B), Sub(A, B), Mul(A, B), Div(A, B));
             }
         }
+
         public static void practice13_2()
         {
             List<Computation<int>> computations_int = new List<Computation<int>>();
@@ -718,6 +739,7 @@ namespace class_test_1
                 index++;
             }
         }
+
         class Computation<T>
         {
             private T number1;
@@ -821,6 +843,7 @@ namespace class_test_1
                 Console.WriteLine("사칙연산 결과 : {0}, {1}, {2}, {3}", Add(A, B), Sub(A, B), Mul(A, B), Div(A, B));
             }
         }
+
         public static void practice14()
         {
             string name;
@@ -854,6 +877,7 @@ namespace class_test_1
                 }
             }
         }
+
         class Car
         {
             private string name;
@@ -896,38 +920,20 @@ namespace class_test_1
                 return speed;
             }
         }
+
         public static void practice15()
         {
 
         }
-        public interface IDrawble
-        {
-            int Draw(object obj);
-        }
-        class Mypaint : IDrawble
-        {
-            private int key;
-            public int Draw(object obj)
-            {
-                Mypaint target = (Mypaint)obj;
-                return this.key.Draw(target.key);
-            }
-            public void DrawShape(int number)
-            {
 
-            }
-            public int Triangle(int a, int b, int c)
-            {
-                return 0;
-            }
-            public int Rectangle(int width, int height)
-            {
-                return 0;
-            }
-            public int CustomShape(int width, int height, int x, int y)
-            {
-                return 0;
-            }
+        interface IDrawble
+        {
+            void Draw();
+        }
+
+        class MyPaint : IDrawble
+        {
+            
         }
     }
 }
