@@ -9,7 +9,7 @@ namespace class_test_1
 {
     public static partial class PracticeClass
     {
-        struct Rectangle
+        struct Rectangle 
         {
             public double length;
             public double width;
@@ -26,7 +26,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice1()
+        public static void practice1() 
         {
             Console.WriteLine("Struct");
             Console.WriteLine("===================");
@@ -158,7 +158,7 @@ namespace class_test_1
             Console.ReadLine();
         }
 
-        public static void practice2()
+        public static void practice2() 
         {
             string str = "kunsan University" + " " + "is good";
             //Console.WriteLine(str.ToLower()); //소문자로 출력
@@ -227,7 +227,7 @@ namespace class_test_1
 
         }
 
-        public static void TrimEnd(StringBuilder n, char a)
+        public static void TrimEnd(StringBuilder n, char a) 
         {
             String i = n.ToString();
             int ac = 0;
@@ -249,7 +249,7 @@ namespace class_test_1
             ///////////////////////
         }
 
-        public static void practice3()
+        public static void practice3() 
         {
             //Console.WriteLine(5 + 8);
             //Console.WriteLine(5 - 8);
@@ -284,7 +284,7 @@ namespace class_test_1
             //Console.WriteLine(Math.Atan2(2.0,2.0));
         }
 
-        public static void practice4()
+        public static void practice4() 
         {
             //String name = null;
             //Console.Write("Enter Your Name : ");
@@ -307,7 +307,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice5()
+        public static void practice5() 
         {
             //한 학급에 5명의 학생이 있고, 각 학생당 국영수 세과목 점수가 배열에 저장되어 있을때,
             //각 학생별 국영수 합계 및 그 평균을 출력하는 프로그램을 작성하시오.
@@ -337,7 +337,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice6()
+        public static void practice6() 
         {
             //한 문자열의 대문자는 소문자로, 소문자는 대문자로 변경하는 프로그램을 작성하시오.
             //Hello, World -> hELLO, wORLD
@@ -383,7 +383,7 @@ namespace class_test_1
             //Console.WriteLine(result);
         }
 
-        public static void practice7()
+        public static void practice7() 
         {
             //"Hello World"를 시저의 암호화 기법을 사용하여 "Khoor Zruog"
             //으로 출력하는 프로그램을 작성하시오
@@ -440,7 +440,7 @@ namespace class_test_1
             //Console.WriteLine(sb.ToString());
         }
 
-        public static void practice8()
+        public static void practice8() 
         {
             //임의의 정의 값들을 배열로 받아들여, 그 합계를 구하는
             //메서드(함수)를 작성하시오.
@@ -468,7 +468,7 @@ namespace class_test_1
 
         }
 
-        public static int Sum(int[] number)
+        public static int Sum(int[] number) 
         {
             int sum = 0;
             for (int j = 0; j < number.Length; j++)
@@ -478,7 +478,7 @@ namespace class_test_1
             return sum;
         }
 
-        public static void practice9()
+        public static void practice9() 
         {
             //2개의 정수 값을 받아들여 덧셈, 뺄셈, 곱셈, 나눗셈을 각각 수행하는 4개의 메서드를 작성하시오.
             //이들 메서드를 사용하여 아래와 같은 계산식의 결과를 출력하시오
@@ -493,27 +493,27 @@ namespace class_test_1
 
         }
 
-        public static int Number_Add(int a, int b) //덧셈
+        public static int Number_Add(int a, int b) //덧셈 
         {
             return a + b;
         }
 
-        public static int Number_Sub(int a, int b) //뺄셈
+        public static int Number_Sub(int a, int b) //뺄셈 
         {
             return a - b;
         }
 
-        public static int Number_Mul(int a, int b) //곱셈
+        public static int Number_Mul(int a, int b) //곱셈 
         {
             return a * b;
         }
 
-        public static int Number_Div(int a, int b) //나눗셈
+        public static int Number_Div(int a, int b) //나눗셈 
         {
             return a / b;
         }
 
-        public static void practice10()
+        public static void practice10() 
         {
             //다음과 같은 조건을 갖는 삼각형(Triangle) 클래스를 작성하세요.
             //[조건]
@@ -533,7 +533,7 @@ namespace class_test_1
             tri2.Draw(tri2.A, tri2.B, tri2.C);
         }
 
-        public static void practice12() //삼각형 크래스
+        public static void practice12() //삼각형 크래스 
         {
             List<Triangle1> triangles = new List<Triangle1>();
             triangles.Add(new Triangle1(3, 4, 5));
@@ -548,7 +548,7 @@ namespace class_test_1
             }
         }
 
-        class Triangle1 // practice12
+        class Triangle1 // practice12 
         {
             private int A, B, C;
             public Triangle1(int a, int b, int c)
@@ -583,7 +583,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice13_1()
+        public static void practice13_1() 
         {
             //2개의 숫자 (int, double 형 각각)을 받아들여 덧셈, 뺄셈 곱셈, 나눗셈을
             //수행하는 메서드를 갖는 클래스를 작성하시오.
@@ -614,7 +614,7 @@ namespace class_test_1
 
         }
 
-        class Computation_double // 사칙연산(double 형)
+        class Computation_double // 사칙연산(double 형) 
         {
             private double number1 = 0;
             private double number2 = 0;
@@ -668,7 +668,7 @@ namespace class_test_1
             }
         }
 
-        class Computation_int //사칙연산(int 형)
+        class Computation_int //사칙연산(int 형) 
         {
             private int number1 = 0;
             private int number2 = 0;
@@ -722,7 +722,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice13_2()
+        public static void practice13_2() 
         {
             List<Computation<int>> computations_int = new List<Computation<int>>();
             List<Computation<double>> computations_double = new List<Computation<double>>();
@@ -741,7 +741,7 @@ namespace class_test_1
             }
         }
 
-        class Computation<T>
+        class Computation<T> 
         {
             private T number1;
             private T number2;
@@ -845,7 +845,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice14()
+        public static void practice14() 
         {
             string name;
             string c = null;
@@ -879,7 +879,7 @@ namespace class_test_1
             }
         }
 
-        class Car
+        class Car 
         {
             private string name;
             private int s;
@@ -922,7 +922,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice15()
+        public static void practice15() 
         {
             MyPaint my = new MyPaint();
 
@@ -938,12 +938,12 @@ namespace class_test_1
             my.DrawShape(c);
         }
 
-        interface IDrawble
+        interface IDrawble 
         {
             void Draw();
         }
 
-        class MyPaint
+        class MyPaint 
         {
             List<IDrawble> drawbles = new List<IDrawble>();
 
@@ -1019,7 +1019,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice16()
+        public static void practice16() 
         {
             Full_Time_Employee fte = new Full_Time_Employee("gaga", 01);
             fte.AnnalSalary = 30000;
@@ -1035,7 +1035,7 @@ namespace class_test_1
             pte.SayName();
         }
 
-        public class Employee
+        public class Employee 
         {
             public string Name { get; set; }
             public string Email { get; set; }
@@ -1092,7 +1092,7 @@ namespace class_test_1
             }
         }
 
-        public static void practice17()
+        public static void practice17() 
         {
             //Student_Score student = new Student_Score(1,85,92,88);
             //student.All_Sum();
@@ -1122,7 +1122,7 @@ namespace class_test_1
             }
         }
 
-        public class Student
+        public class Student 
         {
             public int Number { get; set; }
             public int Korea_Number { get; set; }
@@ -1161,10 +1161,30 @@ namespace class_test_1
                 Console.WriteLine($"{Number},{Korea_Number},{English_Number},{Math_Number}///{All_Sum()},{All_Div()}");
             }
         }
+        
+        delegate void DelegateType(string str); //delegate를 선언
+
+        class A
+        {
+            public void Print(string str)
+            {
+                Console.WriteLine(str);
+            }
+        }
+        public static void practice18()
+        {
+                A test = new A();
+                DelegateType Delmethod1 = new DelegateType(test.Print); // c# 1.0 이상에서 사용가능
+                Delmethod1("Hello world1");
+             
+                DelegateType DelMethod2 = test.Print; // c# 2.0 이상에서 사용 가능
+                DelMethod2("Hello world2");
+            
+        }
     }
 }
 
-public class Triangle //practice10
+public class Triangle //practice10 
 {
     //필드
     private double number1 = 0;
