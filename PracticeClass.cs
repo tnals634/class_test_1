@@ -1162,25 +1162,87 @@ namespace class_test_1
             }
         }
         
-        delegate void DelegateType(string str); //delegate를 선언
+        delegate void DelegateType(/*string str*/); //delegate를 선언(practice18)
 
-        class A
+        class A // practice18 
         {
-            public void Print(string str)
+            //public void Print(string str)
+            //{
+            //    Console.WriteLine(str);
+            //}
+
+            public void PrintA()
             {
-                Console.WriteLine(str);
+                Console.WriteLine("PrintA");
+            }
+
+            public void PrintB()
+            {
+                Console.WriteLine("PrintB");
+            }
+
+        }
+        public static void practice18() //delegate
+        {
+            //A test = new A();
+            //DelegateType Delmethod1 = new DelegateType(test.Print); // c# 1.0 이상에서 사용가능
+            //Delmethod1("Hello world1");
+
+            //DelegateType DelMethod2 = test.Print; // c# 2.0 이상에서 사용 가능
+            //DelMethod2("Hello world2");
+
+            A Test = new A();
+            DelegateType DelFunc = Test.PrintA;
+            DelFunc += Test.PrintB;
+            DelFunc();
+            DelFunc -= Test.PrintB;
+            DelFunc();
+        }
+
+
+        delegate void Delegate_Type(string message); //practice19
+        class D_A // practice19
+        {
+            public event Delegate_Type EventHandler;
+
+            public void Func(string Message)
+            {
+                EventHandler(Message);
             }
         }
-        public static void practice18()
+
+        class D_B // practice19
         {
-                A test = new A();
-                DelegateType Delmethod1 = new DelegateType(test.Print); // c# 1.0 이상에서 사용가능
-                Delmethod1("Hello world1");
-             
-                DelegateType DelMethod2 = test.Print; // c# 2.0 이상에서 사용 가능
-                DelMethod2("Hello world2");
-            
+            public void PrintA(string Message)
+            {
+                Console.WriteLine(Message);
+            }
+
+            public void PrintB(string Message)
+            {
+                Console.WriteLine(Message);
+            }
         }
+        public static void practice19() // delegate event
+        {
+            D_A Test1 = new D_A();
+            D_B Test2 = new D_B();
+
+            Test1.EventHandler += new Delegate_Type(Test2.PrintA);
+            Test1.EventHandler += new Delegate_Type(Test2.PrintB);
+            Test1.Func("Good!!!");
+            Test1.EventHandler -= Test2.PrintB;
+            Test1.Func("Hi~~!");
+            Test1.EventHandler -= Test2.PrintA;
+
+            Test1.EventHandler += Test2.PrintA; //처리기에 추가하기
+            Test1.EventHandler += Test2.PrintB;
+
+            Test1.Func("Hello World");
+
+        }
+
+
     }
 }
 
